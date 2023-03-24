@@ -1,6 +1,6 @@
 {
   "name": "m-comp",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "MBANK COMPONENTS",
   "main": "./build/index.js",
   "author": "Jargalan",
