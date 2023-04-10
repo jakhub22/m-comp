@@ -1,6 +1,6 @@
 {
     "name": "mbank-component",
-    "version": "0.1.17",
+    "version": "0.1.18",
     "description": "MBANK COMPONENTS",
     "main": "./build/index.js",
     "author": "Jargalan",
@@ -14,10 +14,12 @@
     "dependencies": {
         "antd": "^5.3.2",
         "next": "13.2.4",
+        "prismjs": "^1.29.0",
         "react": "18.2.0",
         "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "18.2.0",
-        "react-highlight": "^0.15.0"
+        "react-markdown": "^8.0.6",
+        "react-syntax-highlighter": "^15.5.0"
     },
     "devDependencies": {
         "@babel/core": "^7.21.3",

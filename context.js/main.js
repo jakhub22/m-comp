@@ -1,20 +1,16 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { componentRoutes, backendRoutes } from '../routes';
+import { componentRoutes } from '../routes';
 
 const MainContext = createContext({});
 
 export default function MainProvider({ children }) {
     const routes = useRouter();
     const [mainData, setMainData] = useState({
-        selectedMenu: 0,
+        selectedMenu: 'Home',
         selectedSideMenu: 'MButton',
         routes: [],
     });
-
-    useEffect(() => {
-        changedMenu();
-    }, []);
 
     useEffect(() => {
         changedMenu();
@@ -26,17 +22,19 @@ export default function MainProvider({ children }) {
 
     function changedMenu() {
         switch (mainData.selectedMenu) {
-            case 0:
-                mainData.routes = componentRoutes;
-
+            case 'Home':
+                routes.push('/');
                 break;
-            case 1:
-                mainData.routes = backendRoutes;
+            case 'Components':
+                changeRoute(componentRoutes);
                 break;
             default:
-                mainData.routes = componentRoutes;
                 break;
         }
+    }
+
+    function changeRoute(route) {
+        mainData.routes = route;
         mainData.selectedSideMenu =
             mainData.routes[Object.keys(mainData.routes)[0]][0].name;
         routes.push(mainData.routes[Object.keys(mainData.routes)[0]][0].path);

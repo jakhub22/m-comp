@@ -1,73 +1,19 @@
 import React from 'react';
-import Bank from '../icons/bank';
-import Heart from '../icons/heart';
+import { iconLibrary } from '../../iconLibrary';
 
-export default function MIcon({
-    name,
-    color,
-    height = 24,
-    width = 24,
-    className,
-}) {
-    const Icon = getIconByName(name);
-
-    function getIconByName(name) {
-        switch (name) {
-            case 'heart':
-                return Heart;
-            case 'bank':
-                return Bank;
-            default:
-                return null;
-        }
-    }
+export default function MIcon({ name, style = { opacity: 1 }, className }) {
+    const renderPaths = iconLibrary[name]?.paths.map((path, index) => (
+        <path key={index} d={path}></path>
+    ));
+    const viewBox = iconLibrary[name]?.viewBox;
 
     return (
-        <div
-            style={{ height: height, width: width }}
-            className={className && className}
+        <svg
+            style={style}
+            viewBox={viewBox}
+            className={`h-5 w-5 ${className && className}`}
         >
-            <Icon color={color} />
-        </div>
+            {renderPaths}
+        </svg>
     );
 }
-
-// import React, { useEffect, useState } from 'react';
-
-// export default function MIcon({
-//     name,
-//     color,
-//     height = 24,
-//     width = 24,
-//     className,
-// }) {
-//     const [Icon, setIcon] = useState(null);
-
-//     useEffect(() => {
-//         async function importIcon() {
-//             try {
-//                 const module = await import(`../icons/${name}`);
-//                 setIcon(module.default);
-//             } catch (error) {
-//                 console.error(`Could not import icon ${name}: ${error}`);
-//             }
-//         }
-
-//         importIcon();
-//     }, [name]);
-
-//     console.log(Icon, 'Icon');
-
-//     if (Icon === null || Icon === undefined) {
-//         return null;
-//     }
-
-//     return (
-//         <div
-//             style={{ height: height, width: width }}
-//             className={className && className}
-//         >
-//             <Icon color={color} />
-//         </div>
-//     );
-// }

@@ -1,40 +1,22 @@
-import { Button, getBodyHeight, Hello } from './library/index';
-
 export const componentRoutes = {
     Components: [
         {
-            path: '/mButton',
-            name: 'MButton',
-            component: Button,
+            name: 'Заавар',
+            path: '/components/Guide',
         },
         {
-            path: '/hello',
-            name: 'Hello',
-            component: Hello,
+            name: 'Icons',
+            path: '/components/Icons',
+        },
+        {
+            name: 'MIcon',
+            path: '/components/MIconComp',
         },
     ],
     Functions: [
         {
-            path: '/getBodyHeight',
             name: 'getBodyHeight',
-            component: getBodyHeight,
-        },
-    ],
-};
-
-export const backendRoutes = {
-    Components: [
-        {
-            path: '/button',
-            name: 'Service 1',
-            component: Button,
-        },
-    ],
-    Functions: [
-        {
             path: '/getBodyHeight',
-            name: 'Service 2',
-            component: getBodyHeight,
         },
     ],
 };

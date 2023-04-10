@@ -1,31 +1,35 @@
 import React from 'react';
 import { useMainContext } from '@/context.js/main';
+import { MIcon } from '@/library';
 
-const menuItems = ['Components', 'Front Standards', 'Backend Services'];
+const menuItems = ['Home', 'Components'];
 
 export default function Header() {
     const { mainData, changeMainData } = useMainContext();
 
-    function changeSelectedMenu(menuIndex) {
-        mainData.selectedMenu = menuIndex;
+    function changeSelectedMenu(menuName) {
+        mainData.selectedMenu = menuName;
         changeMainData();
     }
 
     return (
         <div
-            id="MHeader"
-            className="flex h-14 w-full items-center border-b px-14 shadow-md"
+            id="Navbar"
+            className="z-10 flex h-14 w-full items-center border-b bg-white px-14 shadow-md"
         >
             <div className="flex w-full items-center justify-between">
-                <div>LOGO</div>
+                <div>
+                    <MIcon name="mlogo" className="h-[30px] w-[130px]" />
+                </div>
                 <div className="flex items-center gap-6">
                     {menuItems.map((x, i) => (
                         <button
-                            className={`h-14 py-3 hover:border-t-2 hover:border-[#1677ff] ${
-                                mainData.selectedMenu === i &&
-                                'border-t-2 border-[#1677ff]'
+                            key={`${i}-${x}`}
+                            className={`h-14 py-3 pt-[2px] hover:border-t-2 hover:border-[#1677ff] hover:pt-0 ${
+                                mainData.selectedMenu === x &&
+                                'border-t-2 border-[#1677ff] pt-0'
                             }`}
-                            onClick={() => changeSelectedMenu(i)}
+                            onClick={() => changeSelectedMenu(x)}
                         >
                             {x}
                         </button>

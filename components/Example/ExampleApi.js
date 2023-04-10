@@ -2,32 +2,20 @@ import React from 'react';
 
 const tolgoi = ['Шинж чанар', 'Тайлбар', 'Төрөл', 'Анхны утга'];
 
-export default function Api({ api, antApi, id }) {
+export default function ExampleApi({ api, source }) {
     return (
-        <div id={id} style={{ width: '100%' }}>
+        <div id="API" className="mt-7 w-full pb-7">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <h2>API</h2>
-                {antApi && <a href={antApi}>#Ant API</a>}
+                <div className="mb-4 pl-3"># API</div>
+                {source && <a href={source}>#Ant API</a>}
             </div>
             <div className="w-full border">
-                <div
-                    style={{
-                        display: 'flex',
-                        width: '100%',
-                        marginBottom: 10,
-                        fontSize: '1rem',
-                        fontWeight: '500',
-                        padding: 10,
-                        backgroundColor: '#efefef',
-                    }}
-                    className=""
-                >
-                    {tolgoi.map((x) => (
+                <div className="mb-3 flex w-full bg-[#efefef] p-3 font-medium">
+                    {tolgoi.map((x, i) => (
                         <div
+                            key={`${i}-head`}
+                            className="flex w-1/2 px-3"
                             style={{
-                                width: '50%',
-                                padding: '0 10px',
-                                display: 'flex',
                                 '&:nth-child(1)': {
                                     width: '20%',
                                     fontWeight: '500',
@@ -44,24 +32,14 @@ export default function Api({ api, antApi, id }) {
                         </div>
                     ))}
                 </div>
-                {api.map((x) => (
+                {api.map((x, i) => (
                     <div
-                        style={{
-                            display: 'flex',
-                            width: '100%',
-                            borderBottom: '1px solid #ddd',
-                            padding: 10,
-                            alignItems: 'center',
-                            '&:last-child': {
-                                borderBottom: 'none',
-                            },
-                        }}
+                        key={`${i}-api`}
+                        className="flex w-full items-center border-b border-[#ddd] p-3 last:border-none"
                     >
                         <div
+                            className="flex w-1/2 px-3"
                             style={{
-                                width: '50%',
-                                padding: '0 10px',
-                                display: 'flex',
                                 '&:nth-child(1)': {
                                     width: '20%',
                                     fontWeight: '500',
@@ -77,10 +55,8 @@ export default function Api({ api, antApi, id }) {
                             {x.property}
                         </div>
                         <div
+                            className="flex w-1/2 px-3"
                             style={{
-                                width: '50%',
-                                padding: '0 10px',
-                                display: 'flex',
                                 '&:nth-child(1)': {
                                     width: '20%',
                                     fontWeight: '500',
@@ -96,10 +72,8 @@ export default function Api({ api, antApi, id }) {
                             {x.description}
                         </div>
                         <div
+                            className="flex w-1/2 px-3"
                             style={{
-                                width: '50%',
-                                padding: '0 10px',
-                                display: 'flex',
                                 '&:nth-child(1)': {
                                     width: '20%',
                                     fontWeight: '500',
@@ -116,10 +90,8 @@ export default function Api({ api, antApi, id }) {
                             {x.type}
                         </div>
                         <div
+                            className="flex w-1/2 px-3"
                             style={{
-                                width: '50%',
-                                padding: '0 10px',
-                                display: 'flex',
                                 '&:nth-child(1)': {
                                     width: '20%',
                                     fontWeight: '500',
