@@ -27,6 +27,11 @@ export function getBodyHeight() {
     return bodyHeight;
 }
 
-export function isNullOrUndefined(value) {
+export function isEmpty(value) {
     return value === null || value === undefined || value === '';
+}
+
+export function emailValidation(value) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(value);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useMainContext } from '@/context.js/main';
 import { MIcon } from '@/library';
 
-const menuItems = ['Home', 'Components'];
+const menuItems = ['Home', 'Components', 'Functions'];
 
 export default function Header() {
     const { mainData, changeMainData } = useMainContext();

@@ -13,10 +13,17 @@ export const componentRoutes = {
             path: '/components/MIconComp',
         },
     ],
+};
+
+export const functionRoutes = {
     Functions: [
         {
             name: 'getBodyHeight',
-            path: '/getBodyHeight',
+            path: '/',
+        },
+        {
+            name: 'emailValidation',
+            path: '/',
         },
     ],
 };

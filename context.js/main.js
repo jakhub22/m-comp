@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { componentRoutes } from '../routes';
+import { componentRoutes, functionRoutes } from '../routes';
 
 const MainContext = createContext({});
 
@@ -28,6 +28,9 @@ export default function MainProvider({ children }) {
             case 'Components':
                 changeRoute(componentRoutes);
                 break;
+            case 'Functions':
+                changeRoute(functionRoutes);
+                break;
             default:
                 break;
         }
@@ -37,7 +40,12 @@ export default function MainProvider({ children }) {
         mainData.routes = route;
         mainData.selectedSideMenu =
             mainData.routes[Object.keys(mainData.routes)[0]][0].name;
-        routes.push(mainData.routes[Object.keys(mainData.routes)[0]][0].path);
+        if (mainData.selectedMenu === 'Functions') {
+            routes.push('/functions/');
+        } else
+            routes.push(
+                mainData.routes[Object.keys(mainData.routes)[0]][0].path,
+            );
         changeMainData();
     }
 

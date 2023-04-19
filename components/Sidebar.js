@@ -8,7 +8,11 @@ export default function Sidebar() {
 
     function changeSelectedMenu(sideMenu) {
         mainData.selectedSideMenu = sideMenu.name;
-        if (sideMenu.path) routes.push(sideMenu.path);
+        if (mainData.selectedMenu === 'Functions') {
+            routes.push('/functions/');
+        } else {
+            if (sideMenu.path) routes.push(sideMenu.path);
+        }
         changeMainData();
     }
 

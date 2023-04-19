@@ -4,57 +4,54 @@ import { MIcon } from '@/library';
 
 const apiList = [
     {
-        property: 'type',
-        description:
-            'primary, ghost, dashed, link, text, default, khadgalakh, butsakh гэсэн сонголтоос авч ашиглана',
+        property: 'name',
+        description: 'Icons дундаас сонгож нэрийг авч ашиглана',
         type: 'string',
         default: '-',
     },
     {
-        property: 'khuleelgekhTsag',
-        description: 'onClick хийх үед хүлээх хугацааг тохируулж өгнө.',
-        type: 'number',
+        property: 'className',
+        description: 'MIcon component-д тохируулах style-ийг оруулна',
+        type: 'string',
         default: '-',
-    },
-    {
-        property: 'background',
-        description: 'Товчны арын өнгийг тохируулж өгнө.',
-        type: 'hex',
-        default: '-',
-    },
-    {
-        property: 'color',
-        description: 'Товчны үсэгний өнгийг тохируулж өгнө.',
-        type: 'hex',
-        default: '-',
-    },
-    {
-        property: 'danger',
-        description:
-            'Хэрэв товчинд өнгө өгөх бол заавал danger утгыг дамжуулах ёстой.',
-        type: 'boolean',
-        default: 'false',
     },
 ];
 
 export default function MIconComp() {
     return (
-        <ExampleTemplate title="test" api={apiList}>
+        <ExampleTemplate title="MIcon" api={apiList}>
             <ExampleBox
-                title="test1"
-                description="tes1 description"
+                title="Энгийн icon"
+                description="MIcon-д name дамжуулж ашиглахад"
                 code={`
-<Tooltip title="Код харах">
-    <div>
-        <MIcon
-            name="code"
-            className={"fill-gray-400 hover:fill-black"}
-        />
-    </div>
-</Tooltip>
+<MIcon name="user" />
             `}
             >
                 <MIcon name="user" />
+            </ExampleBox>
+            <ExampleBox
+                title="Өнгө тохируулсан icon"
+                description="MIcon-д className дамжуулан icon-ий өнгө солих"
+                code={`
+<MIcon name="user" className='fill-primary' />
+            `}
+            >
+                <MIcon name="user" className="fill-primary" />
+            </ExampleBox>
+            <ExampleBox
+                title="Custom styled icon"
+                description="MIcon-д className дамжуулан өөрчлөх"
+                code={`
+<MIcon
+    name="user"
+    className="h-7 w-7 fill-gray-600 hover:fill-black"
+/>
+            `}
+            >
+                <MIcon
+                    name="user"
+                    className="h-7 w-7 fill-gray-600 hover:fill-black"
+                />
             </ExampleBox>
         </ExampleTemplate>
     );
