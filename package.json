@@ -1,6 +1,6 @@
 {
     "name": "mbank-component",
-    "version": "0.1.18",
+    "version": "0.1.19",
     "description": "MBANK COMPONENTS",
     "main": "./build/index.js",
     "author": "Jargalan",
