@@ -1,5 +1,5 @@
 import React from 'react';
-import { iconLibrary } from '../../iconLibrary';
+import { iconLibrary } from '../iconLibrary';
 
 export default function MIcon({ name, style = { opacity: 1 }, className }) {
     const renderPaths = iconLibrary[name]?.paths.map((path, index) => (

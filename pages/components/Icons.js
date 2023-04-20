@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Input, message } from 'antd';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { MIcon } from '@/library';
-import { iconLibrary } from '../../iconLibrary';
+import { iconLibrary } from '../../library/iconLibrary';
 
 export default function Icons() {
     const [searchIcon, setSearchIcon] = useState(null);
