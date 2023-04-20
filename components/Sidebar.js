@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMainContext } from '@/context.js/main';
+import { useMainContext } from '@/context/main';
 import { useRouter } from 'next/router';
 
 export default function Sidebar() {

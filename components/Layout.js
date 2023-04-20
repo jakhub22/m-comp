@@ -1,4 +1,4 @@
-import { useMainContext } from '@/context.js/main';
+import { useMainContext } from '@/context/main';
 import { getBodyHeight } from '@/library';
 import Header from './Header';
 import Sidebar from './Sidebar';

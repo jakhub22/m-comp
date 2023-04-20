@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMainContext } from '@/context.js/main';
+import { useMainContext } from '@/context/main';
 import { MIcon } from '@/library';
 
 const menuItems = ['Home', 'Components', 'Functions'];

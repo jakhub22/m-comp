@@ -2,7 +2,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { Anchor } from 'antd';
 import ExampleApi from './ExampleApi';
-import { useMainContext } from '@/context.js/main';
+import { useMainContext } from '@/context/main';
 
 export default function ExampleTemplate({ children, title, api, source }) {
     const { mainData } = useMainContext();

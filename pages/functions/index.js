@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { useMainContext } from '@/context.js/main';
+import { useMainContext } from '@/context/main';
 import { customFunctions } from '@/customFunctions';
 
 export default function Functions() {
